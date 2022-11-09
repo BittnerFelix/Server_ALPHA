@@ -2,8 +2,12 @@ POST http://localhost:5000/userCreateTask/createUserTask
 Content-Type: application/json
 
 {
-    "myID":"Bittner@gmail.com",
-    "myfname": "Felix",
+    "myID":"Test@gmail.com",
+    "myfname": "Mohrenkopf",
     "mylname": "Strobel",
     "mypasswd": "1234qwer"
 }
+
+###
+
+GET http://localhost:5000/userCreateTask/getUser

@@ -17,5 +17,12 @@ router.post("/createUserTask", async (req, res)=>{
         res.status(400).json({msg: error});
     }
 });
-
+router.get("/getUser", async (req, res) => {
+    try{
+        let userFind= await UserCreateModel.find();
+        res.json(userFind);
+    } catch (e){
+        res.json({msg: e});
+    }
+});
 module.exports = router;
