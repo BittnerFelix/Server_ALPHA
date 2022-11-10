@@ -2,7 +2,7 @@ POST http://localhost:5000/userCreateTask/createUserTask
 Content-Type: application/json
 
 {
-    "myID":"Test@gmail.com",
+    "myID":"Niklas@gmail.com",
     "myfname": "Mohrenkopf",
     "mylname": "Strobel",
     "mypasswd": "1234qwer"

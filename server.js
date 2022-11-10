@@ -4,7 +4,8 @@ const port = 5000;
 
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb+srv://Test:test@devcluster1.okrmoqd.mongodb.net/Webshop-DEV?retryWrites=true&w=majority",
+//mongoose.connect("mongodb+srv://Test:test@devcluster1.okrmoqd.mongodb.net/Webshop-DEV?retryWrites=true&w=majority",
+mongoose.connect("mongodb://localhost:27017/Webshop-Test",
 {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -18,7 +19,7 @@ db.once("open", function (){
 } );
 
 app.listen(port, () => {
-    console.log('Server is running' + port);
+    console.log('Server is running ' + port);
 });
 app.get("/homepage", (req, res) => {
     res.send("Yay!!");
