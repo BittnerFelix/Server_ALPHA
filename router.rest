@@ -1,13 +1,15 @@
-POST http://localhost:5000/userCreateTask/createUserTask
+POST http://localhost:8081/test/product-test
 Content-Type: application/json
 
 {
-    "myID":"Test@gmail.com",
-    "myfname": "Mohrenkopf",
-    "mylname": "Strobel",
-    "mypasswd": "1234qwer"
+    "myID":"4206913",
+    "myname": "T-Shirt Weiss",
+    "myprice": "29.99",
+    "mydesc": "Ist es ein Vogel? Ist es ein Flugzeug? Nein, es ist ein T-Shirt",
+    "mychar": ["Weiss", "100% Baumwolle", "klassicher Rundhals ausschnitt", "Single-Jersey", "halbarm", "Made in Germany"],
+    "myurl": "./../../../img/shirt_weiss.jpg"
 }
 
 ###
 
-GET http://localhost:5000/userCreateTask/getUser
+GET http://localhost:8081/test/product-test

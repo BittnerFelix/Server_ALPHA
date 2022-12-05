@@ -1,29 +1,31 @@
 const mongoose=require("mongoose");
-const userCreateShema = mongoose.Schema({
+const testShema = mongoose.Schema({
+   
     _id:{
         type: String,
         require: true,
     },
-    fname:{
+    name:{
         type: String,
         require: true,
     },
-    lname:{
+    price:{
         type: String,
         require: true,
     },
-    hashedAndSaltedPassword:{
+    description:{
         type: String,
-        require: true,
-    },
-    emailVerified:{
-        type: Boolean,
         require: false,
     },
-    bdate:{
-        type: Date,
+    characteristics:{
+        type: Array,
         require: true,
     },
+    lokalerpfad:{
+        type: String,
+        require: false,
+    }
+
     
 });
-module.exports=mongoose.model("Users",userCreateShema)
+module.exports=mongoose.model("Inv_test",testShema)
