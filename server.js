@@ -5,7 +5,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb+srv://Test:test@devcluster1.okrmoqd.mongodb.net/Webshop-DEV?retryWrites=true&w=majority",
+mongoose.connect("mongodb://localhost:27017/Webshop-Test",
 {
     useNewUrlParser: true,
     useUnifiedTopology: true,
