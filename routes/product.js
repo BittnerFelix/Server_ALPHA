@@ -34,4 +34,14 @@ router.get('/product', async (req, res) => {
   // ...
 })
 
+router.get('/topseller', async (req, res) => {
+  try {
+   let test = await INVModel.find({'topseller':"true"});
+   res.json(test);
+  } catch (e) {
+   res.json({msg: e});
+  }
+ // ...
+})
+
 module.exports = router;

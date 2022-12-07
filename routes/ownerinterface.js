@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router(); 
-
+const UserModel=require("../models/user_model")
 
 // GET REQUEST - Ownerinterface General Shop Data
 router.get('/get-shop-data', (req, res) => {
@@ -26,15 +26,14 @@ router.get('/get-table-products', (req, res) => {
 })
 
 // GET REQUEST - Ownerinterface Table Costumers
-router.get('/get-table-costumers', (req, res) => {
-    res.send({
-        'costumer_name' : 'Test Person',
-        'costumer_mail' : 'test@email.de',
-        'password' : 'einTestPasswort',
-        'signin_date' : '10.01.2020',
-        'costumer_order' : 3,
-    })
-})
+router.get("/getUser", async (req, res) => {
+    try{
+        let userFind= await UserModel.find();
+        res.json(userFind);
+    } catch (e){
+        res.json({msg: e});
+    }
+});
 
 // GET REQUEST - Ownerinterface Table Orders
 router.get('/get-data-orders', (req, res) => {
