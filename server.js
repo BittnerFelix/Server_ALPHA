@@ -28,9 +28,6 @@ db.once("open", function (){
 app.listen(port, () => {
     console.log('Server is running on port: ' + port);
 });
-app.get("/homepage", (req, res) => {
-    res.send("Yay!!");
-});
 
 app.use(express.json());
 
@@ -51,3 +48,6 @@ app.use("/owner", OwnerRoute);
 
 const TestRoute = require("./routes/test");
 app.use("/test", TestRoute);
+
+const ShoppingRoute = require("./routes/shoppingbag");
+app.use("/Bag", ShoppingRoute);
