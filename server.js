@@ -13,7 +13,6 @@ mongoose.connect("mongodb+srv://Test:test@devcluster1.okrmoqd.mongodb.net/Websho
 }
 );
 
-
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.raw());
@@ -22,7 +21,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection.error"));
 db.once("open", function (){
-    console.log("Hurra we are connected")
+    console.log("Verbindung zur Datenbank erfolgreich hergestellt!!")
 } );
 
 app.listen(port, () => {
@@ -32,13 +31,7 @@ app.listen(port, () => {
 app.use(express.json());
 
 const UserCreateRoute = require("./routes/user_create");
-app.use("/userCreateTask", UserCreateRoute);
-
-const ProductsRoute = require("./routes/products");
-app.use("/products", ProductsRoute);
-
-const ProductDetailRoute = require("./routes/product_detail");
-app.use("/details", ProductDetailRoute);
+app.use("/userCreate", UserCreateRoute);
 
 const TopsellerRoute = require("./routes/topseller");
 app.use("/topseller", TopsellerRoute);
@@ -46,8 +39,8 @@ app.use("/topseller", TopsellerRoute);
 const OwnerRoute = require("./routes/OwnerInterface");
 app.use("/owner", OwnerRoute);
 
-const TestRoute = require("./routes/test");
-app.use("/test", TestRoute);
+const ProductRoute = require("./routes/product");
+app.use("/product", ProductRoute);
 
 const ShoppingRoute = require("./routes/shoppingbag");
-app.use("/Bag", ShoppingRoute);
+app.use("/bag", ShoppingRoute);

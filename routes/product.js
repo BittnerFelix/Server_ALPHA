@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router(); 
 const INVModel=require("../models/inv_model")
 
-router.post("/product-test", async (req, res)=>{
+router.post("/product-create", async (req, res)=>{
   const Artcreate=new INVModel({
       _id: req.body.myID,
       name: req.body.myname,
@@ -24,7 +24,7 @@ router.post("/product-test", async (req, res)=>{
 });
 
 
-router.get('/product-test', async (req, res) => {
+router.get('/product-read', async (req, res) => {
    try {
     let test = await INVModel.find();
     res.json(test);

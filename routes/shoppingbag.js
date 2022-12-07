@@ -23,7 +23,7 @@ router.post("/shoppingbag", async (req, res)=>{
 });
 
 
-router.get('/shoppingbag', async (req, res) => {
+router.get('/items', async (req, res) => {
    try {
     let shoppingbag = await BAGModel.find();
     res.json(shoppingbag);
@@ -33,4 +33,13 @@ router.get('/shoppingbag', async (req, res) => {
   // ...
 })
 
+router.get('/total', async (req, res) => {
+  try {
+   let shoppingbag = await BAGModel.aggregate([{$group: { _id: 0, totPrice: { $sum: '$price' }, totProduct: { $sum: 1 } }}]);
+   res.json(shoppingbag);
+  } catch (e) {
+   res.json({msg: e});
+  }
+ // ...
+})
 module.exports = router;

@@ -1,6 +1,5 @@
 const mongoose=require("mongoose");
-const testShema = mongoose.Schema({
-   
+const INVShema = mongoose.Schema({ 
     _id:{
         type: String,
         require: true,
@@ -10,7 +9,7 @@ const testShema = mongoose.Schema({
         require: true,
     },
     price:{
-        type: String,
+        type: Number,
         require: true,
     },
     description:{
@@ -24,8 +23,13 @@ const testShema = mongoose.Schema({
     lokalerpfad:{
         type: String,
         require: false,
+    },
+    topseller:{
+        type: Boolean,
+        require: false,
+        default: false,
     }
 
     
 });
-module.exports=mongoose.model("Inv_test",testShema)
+module.exports=mongoose.model("Inv_test",INVShema)

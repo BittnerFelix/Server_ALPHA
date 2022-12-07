@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const UserCreateModel=require("../models/user_model")
 
-router.post("/createUserTask", async (req, res)=>{
+router.post("/createUser", async (req, res)=>{
     const userCreate=new UserCreateModel({
         _id: req.body.myID,
         fname: req.body.myfname,
