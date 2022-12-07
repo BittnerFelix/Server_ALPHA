@@ -18,5 +18,5 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:8081/product/topseller
+GET http://localhost:8081/product/product
 
