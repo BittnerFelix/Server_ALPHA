@@ -9,4 +9,5 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:8081/bag/items
+GET http://localhost:8081/bag/total
+

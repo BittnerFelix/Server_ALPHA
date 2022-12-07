@@ -24,7 +24,7 @@ router.post("/product-create", async (req, res)=>{
 });
 
 
-router.get('/product-read', async (req, res) => {
+router.get('/product', async (req, res) => {
    try {
     let test = await INVModel.find();
     res.json(test);
