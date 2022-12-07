@@ -4,11 +4,11 @@ const INVModel=require("../models/inv_model")
 
 router.post("/product-create", async (req, res)=>{
   const Artcreate=new INVModel({
-      _id: req.body.myID,
-      name: req.body.myname,
-      price: req.body.myprice,
-      description: req.body.mydesc,
-      characteristics: req.body.mychar,
+      _id: req.body._id,
+      name: req.body._name,
+      price: req.body._price,
+      description: req.body._description,
+      characteristics: [req.body._characteristics1,req.body._characteristics2,req.body._characteristics3,req.body._characteristics4,req.body._characteristics5,req.body._characteristics6],
       lokalerpfad: req.body.myurl
 
   });

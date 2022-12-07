@@ -1,9 +1,18 @@
-POST http://localhost:8081/bag/shoppingbag
+POST http://localhost:8081/product/product-create
 Content-Type: application/json
 
 {   
-    "product_id":"4206913",
-    "size": "xl"
+    "_id":"4206999",
+    "_name": "Testartikel",
+    "_price": "33.33",
+    "_descrition":"Hallo i bims",
+    "_lokalerpfad":"",
+    "_characteristics1":"Test1",
+    "_characteristics2":"Test2",
+    "_characteristics3":"Test3",
+    "_characteristics4":"Test4",
+    "_characteristics5":"Test5",
+    "_characteristics6":"Test6"
     
 }
 
